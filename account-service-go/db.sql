@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS `account`;
-CREATE TABLE `account` (
+CREATE TABLE IF NOT EXISTS `demo.account` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `city` varchar(30) NOT NULL,
