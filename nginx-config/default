@@ -1,0 +1,15 @@
+# /etc/nginx/sites-available/default
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	server_name _;
+    location /nodejs {
+      proxy_pass "http://localhost:8001/nodejs";
+    }
+    location /golang {
+      proxy_pass "http://localhost:8003/golang";
+    }
+    location / {
+      proxy_pass "http://localhost:8002";
+    }
+}
