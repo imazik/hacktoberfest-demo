@@ -6,6 +6,9 @@ server {
     location /nodejs {
       proxy_pass "http://localhost:8001/nodejs";
     }
+    location /golang {
+      proxy_pass "http://localhost:8003/golang";
+    }
     location / {
       proxy_pass "http://localhost:8002";
     }

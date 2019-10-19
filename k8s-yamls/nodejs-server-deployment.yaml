@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-server
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: nodejs-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nodejs-server
+    spec:
+      containers:
+      - name: nodejs-server
+        image: shovan1995/nodejs-server:1.0
+        ports:
+        - containerPort: 8001
